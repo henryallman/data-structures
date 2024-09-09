@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 
 /**
@@ -13,13 +13,22 @@ public class Sieve
         int n = in.nextInt();
 
         // Your work goes here
-        . . .
-
-
-
-
-
-
-
+        Set<Integer> nums = new HashSet<>();
+        for (int i = 2; i<=n; i++){
+            nums.add(i);
+        }
+        for (int i = 2; i<=n; i++){
+            for(int j = 2; i*j<=n ; j++){
+                if(nums.contains(i*j)){
+                    nums.remove(i*j);
+                }
+                
+            }
+            
+        }
+        nums.add(2);
+        System.out.print(nums);
+    
     }
 }
+
