@@ -1,4 +1,4 @@
-import java.util.Stack;
+import java.util.*;
 
 /**
  * This program simulates an undo stack. Note that operations
@@ -9,5 +9,24 @@ public class StackDemo
 {
     public static void main(String[] args)
     {
+        Stack<String> commands = new Stack<>();
+        
+        //Push a bunch of commands onto the top of the stack
+        commands.push("Insert: 'Hello'");
+        commands.push("Insert: ','");
+        commands.push("Insert: ' '");
+        commands.push("Insert: 'World'");
+        commands.push("Insert: '?'");
+        commands.push("Delete: '?'");
+        commands.push("Insert: '!'");
+
+        // Print the stack, the top is the far right
+        System.out.println(commands);
+
+        // Simulate the user pressing undo 4 times
+        for(int i = 0; i<4; i++){
+            System.out.println("Undo---" + commands.pop());
+        }
+        
     }
 }

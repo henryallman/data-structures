@@ -18,13 +18,16 @@ public class FirstLetterMap
         {
 
             // Create your map here
-            ...
+            Map<Integer, String> map = new TreeMap<>();
 
             while (in.hasNext())
             {
                 String word = clean(in.next());
                 Character c = word.charAt(0);
-
+                Set<String> tempTree= words.get(c);
+                if (tempTree==null){
+                    
+                }
                 // Update the map here
                 // Use the Java 8 merge method
                 . . .
