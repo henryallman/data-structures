@@ -50,15 +50,15 @@ public class Driveway
     public void remove(int licensePlate)
     {
         if (driveway.contains(licensePlate)) {
-          while (driveway.isEmpty() == false && driveway.peek() != licensePlate) {
+          while (driveway.size() > 0 && driveway.peek() != licensePlate) {
               street.push(driveway.pop());
               print();
           }
-          if (driveway.isEmpty() == false) {
+          if (driveway.size() > 0) {
               driveway.pop();
               print();
           }
-          while (street.isEmpty() == false) {
+          while (street.size() > 0) {
               driveway.push(street.pop());
               print();
           }
