@@ -16,7 +16,7 @@ import java.util.Stack;
  */
 public class HTMLChecker {
     public static void main(String[] args) {
-        String filename = "/Users/Henry/Desktop/data-structures/Chapter 15 Activities/HTMLChecker/src/TagSample1.html"; 
+        String filename = "/Users/Henry/Desktop/data-structures/Chapter 15 Activities/HTMLChecker/src/TagSample2.html"; 
 
         try (Scanner in = new Scanner(new File(filename))) {
             Stack<String> tagStack = new Stack<>();
@@ -43,7 +43,7 @@ public class HTMLChecker {
                 }
             }
 
-            if (tagStack.isEmpty()==false) {
+            if (tagStack.size()>0) {
                 System.out.println("Error: Unmatched opening tag(s) remain: " + tagStack);
             } else {
                 System.out.println("All tags are properly nested.");
