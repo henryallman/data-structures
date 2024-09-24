@@ -1,42 +1,42 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
+
 /**
  * Read all words from a file and add them to a map
  * whose keys are the first letters of the words and
  * whose values are sets of words that start with
- * that same letter.
- * Then print out the word sets in alphabetical order.
- * Use the Java 8 merge() feature.
-*/
+ * that same letter. Then print out the word sets in
+ * alphabetical order. Update the map by modifying
+ * Worked Example 15.1.
+ */
 public class FirstLetterMap
 {
     public static void main(String[] args)
     {
-        String filename = "H:/Software/data-structures/Chapter 15 Activities/FirstLetterMap/FirstLetterMap1/src/test1.txt";
+        String filename = "H:\\Software\\data-structures\\Chapter 15 Activities\\FirstLetterMap\\FirstLetterMap1\\src\\test1.txt";
 
         try (Scanner in = new Scanner(new File(filename)))
         {
-
             // Create your map here
-            Map<Integer, String> map = new TreeMap<>();
+            Map<Character, Set<String>> words = new HashMap<>();
 
             while (in.hasNext())
             {
                 String word = clean(in.next());
-                Character c = word.charAt(0);
-                Set<String> tempTree= words.get(c);
-                if (tempTree==null){
-                    
+                if (word.isEmpty() == false) {
+                    Character acter = word.charAt(0);
+                    // Update the map here
+                    words.putIfAbsent(acter, new TreeSet<>());
+                    words.get(acter).add(word);
                 }
-                // Update the map here
-                // Use the Java 8 merge method
-                . . .
-
             }
 
             // Print the map here in this form
             // a: [a, able, aardvark]
-            . . .
+            for(Character i : words.keySet())
+            {
+                System.out.println(i + ": " + words.get(i));
+            }
         } catch (FileNotFoundException e)
         {
             System.out.println("Cannot open: " + filename);
@@ -56,5 +56,4 @@ public class FirstLetterMap
         }
         return r.toLowerCase();
     }
-
 }
