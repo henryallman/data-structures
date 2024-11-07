@@ -105,8 +105,8 @@ public class Tree
             for(Node child: n.children){
                 postorder(child, v);
             }
+            v.visit(n.data);
         }
-        v.visit(n.data);
     }
 
     
