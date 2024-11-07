@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
     Add a method void depthFirst(Visitor v) to the Tree class of
@@ -88,12 +88,12 @@ public class Tree
             return true; 
         }
 
-        if (!v.visit(n.data)) {
+        if (v.visit(n.data) == false) {
             return false; 
         }
 
         for (Node child : n.children) {
-            if (!depthFirst(child, v)) {
+            if (depthFirst(child, v) == false) {
                 return false; 
             }
         }
