@@ -1,0 +1,26 @@
+.mid {
+    text-align: center;
+}
+
+.left{
+    text-align: left;
+}
+
+.head {
+    font-size: 60px;
+    color: rgba(231, 43, 43, 0.493);
+}
+
+.head2 {
+    font-size: 100px;
+    color: rgb(231, 43, 43);
+}
+
+#win {
+    font-size: 25px;
+    color: rgb(2, 70, 28);
+};
+
+.p1 {
+    font-family: Fantasy, Papyrus, serif;
+  }
